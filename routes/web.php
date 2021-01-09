@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/blog', function () {
+//     return view('welcome');
+// });
+
+Route::redirect('/', '/blog');
+
+Route::get('/blog', [PageController::class, 'blog']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

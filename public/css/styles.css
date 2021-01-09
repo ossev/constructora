@@ -1,0 +1,201 @@
+/*
+1. Posicionamiento
+2. Modelo de caja
+3. Tipografia
+4. Visualización
+5. Otros
+*/
+
+:root{
+    /*Colores*/
+    --primary: blue;
+    --start_gradient_nav: #474415;
+    --end_gradient_nav: #000000;
+    --button-color: black;
+    --button-background-color: silver;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.btn{
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary{
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: large;
+}
+
+.btn-pagination{
+    width: 40%;
+}
+
+.page-number{
+    background-color: black;
+    color: white;
+    margin: 0 5px 0 5px;
+    padding: 5px;
+    border-radius: 5px;
+    width: 10%;
+    text-align: center;
+}
+
+
+
+
+.navbar {
+    font-size: 18px;
+    background-image: linear-gradient(260deg, #474415 0%, #000000 100%);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    /* padding-bottom: 10px; */
+}
+
+.main-nav {
+    list-style-type: none;
+    display: none;
+}
+
+.nav-links,
+.logo {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+header img{
+    width: 60px;
+}
+
+.main-nav li {
+    text-align: center;
+    margin: 15px auto;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 22px;
+    margin-left: 10px;
+    /* margin-top: 10px;
+    margin-left: 20px; */
+}
+
+.navbar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 24px;
+}
+
+/* .box-shadow-menu {
+    position: relative;
+    padding-left: 1.25em;
+}
+.box-shadow-menu:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25em;
+    width: 1em;
+    height: 0.15em;
+    background: white;
+    box-shadow:
+        0 0.25em 0 0 white,
+        0 0.5em 0 0 white;
+} */
+
+header nav span i{
+    text-decoration: none;
+    font-style: normal;
+}
+
+.active {
+    display: block;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-image: linear-gradient(260deg, #474415 0%, #000000 100%);
+    color: white;
+}
+
+footer section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Styles for posts */
+.post{
+    padding: 5px;
+}
+
+.post h2{
+    padding: 2px;
+}
+.post img{
+    width: 100%;
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.container-btn{
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 0;
+        height: 70px;
+        align-items: center;
+    }
+
+    .main-nav {
+        display: flex;
+        margin-right: 30px;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .main-nav li {
+        margin: 0;
+    }
+
+    .nav-links {
+        margin-left: 40px;
+    }
+
+    .logo {
+        margin-top: 0;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .logo:hover,
+    .nav-links:hover {
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
