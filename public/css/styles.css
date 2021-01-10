@@ -26,6 +26,10 @@ html{
     font-family: 'DM Sans', sans-serif;
 }
 
+header{
+    overflow: hidden;
+}
+
 .btn{
     border-radius: 5px;
     text-decoration: none;
@@ -53,19 +57,32 @@ html{
     text-align: center;
 }
 
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
 
-
+.sticky + main {
+padding-top: 80px;
+}
 
 .navbar {
     font-size: 18px;
     background-image: linear-gradient(260deg, #474415 0%, #000000 100%);
     border: 1px solid rgba(0, 0, 0, 0.2);
+    /* display: flex; */
+    align-items: center;
     /* padding-bottom: 10px; */
 }
 
 .main-nav {
     list-style-type: none;
     display: none;
+}
+
+.content_posts{
+    margin-top: 5px;
 }
 
 .nav-links,
@@ -117,9 +134,10 @@ header img{
         0 0.5em 0 0 white;
 } */
 
-header nav span i{
+#icon_menu{
     text-decoration: none;
     font-style: normal;
+    display: inline-block;
 }
 
 .active {
@@ -198,4 +216,3 @@ footer section{
         color: rgba(255, 255, 255, 1);
     }
 }
-

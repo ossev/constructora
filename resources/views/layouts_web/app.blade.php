@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 
         @livewireStyles
@@ -19,11 +20,8 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>
-        <header>
+        <header id="myHeader">
             <nav class="navbar">
-                <span class="navbar-toggle" id="js-navbar-toggle">
-                    <i class="box-shadow-menu">Menú</i>
-                </span>
                 <img src="{{ asset('images/logo.png') }}" alt="Logo_company">
                 <ul class="main-nav" id="js-menu">
                     <li>
@@ -42,6 +40,9 @@
                         <a href="#" class="nav-links">Blog</a>
                     </li>
                 </ul>
+                <div class="navbar-toggle" id="js-navbar-toggle">
+                    <i class="gg-menu" id="icon_menu"></i>
+                </div>
             </nav>
         </header>
         <main>
@@ -63,13 +64,26 @@
 
             navBarToggle.addEventListener('click', function () {
                 mainNav.classList.toggle('active');
-                console.log(mainNav.className);
                 if (mainNav.className!='main-nav') {
-                    document.querySelector('.box-shadow-menu').innerHTML = 'X';
+                    document.getElementById('icon_menu').className = 'gg-merge-horizontal';
                 }else{
-                    document.querySelector('.box-shadow-menu').innerHTML = 'Menú';
+                    document.getElementById('icon_menu').className = 'gg-menu';
                 }
             });
+
+            // Inicio para realizar sticky navbar
+            window.onscroll = function() {myFunction()};
+                var navbar = document.getElementById("myHeader");
+                var sticky = navbar.offsetTop;
+
+                function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+            // Fin para realizar sticky navbar
         </script>
     </body>
 </html>
